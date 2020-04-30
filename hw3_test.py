@@ -111,6 +111,7 @@ class ImgDataset(Dataset):
 
 test_set = ImgDataset(test_x, transform=test_transform)
 test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False)
+model_best = Classifier().cuda()
 model_best = torch.load_state_dict(torch.load('model_best_CNN.pth'))
 prediction = []
 with torch.no_grad():
